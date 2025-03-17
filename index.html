@@ -1,0 +1,1148 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jivitesh Hazarika - Portfolio</title>
+  <meta name="description" content="Personal portfolio of Jivitesh Hazarika">
+  <meta property="og:image" content="/og-image.png">
+  
+  <style>
+    /* Base variables */
+    :root {
+      --primary: #1a253d;
+      --primary-light: rgba(26, 37, 61, 0.05);
+      --foreground: #111827;
+      --background: #ffffff;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --border-light: rgba(229, 231, 235, 0.5);
+      --radius: 1rem;
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      --transition-all: all 0.3s ease;
+      --transition-colors: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+      --transition-transform: transform 0.3s ease;
+      --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+      --ease-out: cubic-bezier(0, 0, 0.2, 1);
+      --ease-in: cubic-bezier(0.4, 0, 1, 1);
+    }
+
+    /* Reset & Base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--foreground);
+      background-color: var(--background);
+      overflow-x: hidden;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: var(--transition-all);
+    }
+
+    button {
+      cursor: pointer;
+      font: inherit;
+      background: none;
+      border: none;
+      outline: none;
+    }
+
+    /* Layout utility classes */
+    .container {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .section {
+      padding: 4rem 0;
+    }
+
+    .bg-gray-50 {
+      background-color: #f9fafb;
+    }
+
+    .glass-panel {
+      background-color: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+    }
+
+    .rounded-full {
+      border-radius: 9999px;
+    }
+
+    .rounded-lg {
+      border-radius: 0.5rem;
+    }
+
+    .rounded-xl {
+      border-radius: 0.75rem;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .text-left {
+      text-align: left;
+    }
+
+    .mb-2 {
+      margin-bottom: 0.5rem;
+    }
+
+    .mb-4 {
+      margin-bottom: 1rem;
+    }
+
+    .mb-6 {
+      margin-bottom: 1.5rem;
+    }
+
+    .mb-8 {
+      margin-bottom: 2rem;
+    }
+
+    .mb-12 {
+      margin-bottom: 3rem;
+    }
+
+    .mt-4 {
+      margin-top: 1rem;
+    }
+
+    .mt-8 {
+      margin-top: 2rem;
+    }
+
+    .mx-auto {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .p-6 {
+      padding: 1.5rem;
+    }
+
+    .p-8 {
+      padding: 2rem;
+    }
+
+    .px-4 {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    .px-6 {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+
+    .py-2 {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+
+    .py-3 {
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .py-4 {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+
+    .py-8 {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+
+    .py-12 {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+
+    .py-16 {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+
+    /* Typography */
+    .text-xs {
+      font-size: 0.75rem;
+    }
+
+    .text-sm {
+      font-size: 0.875rem;
+    }
+
+    .text-base {
+      font-size: 1rem;
+    }
+
+    .text-lg {
+      font-size: 1.125rem;
+    }
+
+    .text-xl {
+      font-size: 1.25rem;
+    }
+
+    .text-2xl {
+      font-size: 1.5rem;
+    }
+
+    .text-3xl {
+      font-size: 1.875rem;
+    }
+
+    .text-4xl {
+      font-size: 2.25rem;
+    }
+
+    .text-5xl {
+      font-size: 3rem;
+    }
+
+    .font-medium {
+      font-weight: 500;
+    }
+
+    .font-semibold {
+      font-weight: 600;
+    }
+
+    .font-bold {
+      font-weight: 700;
+    }
+
+    .text-primary {
+      color: var(--primary);
+    }
+
+    .text-muted {
+      color: var(--muted);
+    }
+
+    .text-white {
+      color: white;
+    }
+
+    /* Flexbox & Grid */
+    .flex {
+      display: flex;
+    }
+
+    .inline-flex {
+      display: inline-flex;
+    }
+
+    .flex-col {
+      flex-direction: column;
+    }
+
+    .flex-wrap {
+      flex-wrap: wrap;
+    }
+
+    .items-center {
+      align-items: center;
+    }
+
+    .justify-center {
+      justify-content: center;
+    }
+
+    .justify-between {
+      justify-content: space-between;
+    }
+
+    .gap-2 {
+      gap: 0.5rem;
+    }
+
+    .gap-4 {
+      gap: 1rem;
+    }
+
+    .gap-6 {
+      gap: 1.5rem;
+    }
+
+    .gap-8 {
+      gap: 2rem;
+    }
+
+    .grid {
+      display: grid;
+    }
+
+    .grid-cols-1 {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+
+    /* Backgrounds & Borders */
+    .bg-primary {
+      background-color: var(--primary);
+    }
+
+    .bg-primary-light {
+      background-color: var(--primary-light);
+    }
+
+    .bg-white {
+      background-color: white;
+    }
+
+    .bg-gray-100 {
+      background-color: #f3f4f6;
+    }
+
+    .border {
+      border: 1px solid var(--border);
+    }
+
+    .border-t {
+      border-top: 1px solid var(--border);
+    }
+
+    /* Components */
+    .badge {
+      display: inline-block;
+      background-color: var(--primary-light);
+      color: var(--primary);
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5rem 1.25rem;
+      border-radius: 9999px;
+      font-weight: 500;
+      transition: var(--transition-all);
+      line-height: 1.5;
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background-color: rgba(26, 37, 61, 0.9);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      background-color: rgba(249, 250, 251, 0.8);
+      transform: translateY(-2px);
+    }
+
+    .interest-tag {
+      display: inline-block;
+      background-color: #f3f4f6;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .profile-image {
+      width: 100%;
+      max-width: 280px;
+      aspect-ratio: 1/1;
+      border-radius: 50%;
+      border: 4px solid white;
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+      position: relative;
+      margin: 0 auto;
+    }
+
+    .profile-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.75rem 1rem;
+      border-radius: 9999px;
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+      background-color: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: var(--transition-all);
+    }
+
+    .social-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+    }
+
+    .social-link svg {
+      margin-right: 0.5rem;
+    }
+
+    .bullet-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.75rem;
+    }
+
+    .bullet-dot {
+      width: 8px;
+      height: 8px;
+      background-color: var(--primary);
+      border-radius: 50%;
+      margin-right: 0.75rem;
+      flex-shrink: 0;
+    }
+
+    /* Header/Navbar */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      transition: var(--transition-all);
+      padding: 1rem 1.5rem;
+    }
+
+    .header.scrolled {
+      background-color: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(12px);
+      padding: 0.5rem 1.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .nav-link {
+      position: relative;
+      opacity: 0.7;
+      transition: opacity 0.3s ease;
+      padding: 0.5rem;
+      font-weight: 500;
+    }
+
+    .nav-link:hover {
+      opacity: 1;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--primary);
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 24px;
+      height: 18px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      z-index: 60;
+    }
+
+    .mobile-menu-btn span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: var(--foreground);
+      transition: all 0.3s ease;
+    }
+
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+      z-index: 40;
+    }
+
+    .mobile-menu.open {
+      transform: translateX(0);
+    }
+
+    .mobile-menu a {
+      font-size: 1.25rem;
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+    }
+
+    /* Donation Panel */
+    .donation-panel {
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      box-shadow: var(--shadow-md);
+      max-width: 400px;
+      margin: 0 auto;
+      border: 1px solid var(--border-light);
+    }
+
+    .qr-code {
+      width: 200px;
+      height: 200px;
+      margin: 1rem auto;
+      background-color: white;
+      padding: 0.75rem;
+      border-radius: 0.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .copy-btn {
+      background-color: #f3f4f6;
+      border: 1px solid var(--border);
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      font-size: 0.875rem;
+      transition: var(--transition-all);
+    }
+    
+    .copy-btn:hover {
+      background-color: #e5e7eb;
+    }
+
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .modal.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal-content {
+      background-color: white;
+      border-radius: 1rem;
+      padding: 2rem;
+      max-width: 500px;
+      width: 90%;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+      box-shadow: var(--shadow-lg);
+      transform: scale(0.95);
+      opacity: 0;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .modal.open .modal-content {
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: transparent;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--muted);
+      transition: color 0.3s ease;
+    }
+
+    .close-btn:hover {
+      color: var(--foreground);
+    }
+
+    /* Animation classes */
+    .animate-fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .animate-fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .animate-fade-in-left {
+      opacity: 0;
+      transform: translateX(-20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .animate-fade-in-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .animate-fade-in-right {
+      opacity: 0;
+      transform: translateX(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .animate-fade-in-right.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .delay-200 {
+      transition-delay: 200ms;
+    }
+
+    .delay-400 {
+      transition-delay: 400ms;
+    }
+
+    .delay-600 {
+      transition-delay: 600ms;
+    }
+
+    /* Responsive styles */
+    @media (min-width: 768px) {
+      .text-4xl {
+        font-size: 2.5rem;
+      }
+      
+      .text-5xl {
+        font-size: 3.5rem;
+      }
+      
+      .grid-cols-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      
+      .section {
+        padding: 6rem 0;
+      }
+      
+      .hero-grid {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+      }
+    }
+    
+    @media (max-width: 767px) {
+      .nav-desktop {
+        display: none;
+      }
+      
+      .mobile-menu-btn {
+        display: flex;
+      }
+      
+      .section {
+        padding: 3rem 0;
+      }
+      
+      .text-3xl {
+        font-size: 1.75rem;
+      }
+      
+      .text-4xl {
+        font-size: 2rem;
+      }
+      
+      .text-5xl {
+        font-size: 2.5rem;
+      }
+      
+      .profile-image {
+        max-width: 220px;
+        margin-bottom: 2rem;
+      }
+      
+      .hero-content {
+        order: 2;
+      }
+      
+      .hero-image {
+        order: 1;
+      }
+      
+      .grid {
+        row-gap: 3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header/Navbar -->
+  <header id="header" class="header">
+    <div class="container flex items-center justify-between">
+      <div>
+        <span class="font-medium text-lg">Jivitesh.</span>
+      </div>
+      
+      <!-- Desktop Navigation -->
+      <nav class="nav-desktop">
+        <div class="flex gap-4">
+          <a href="#about" class="nav-link">About</a>
+          <a href="#contact" class="nav-link">Contact</a>
+          <a href="#donate" class="nav-link">Donate</a>
+        </div>
+      </nav>
+      
+      <!-- Mobile Menu Button -->
+      <button id="menuBtn" class="mobile-menu-btn" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+  
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="mobile-menu">
+    <a href="#about" onclick="closeMobileMenu()">About</a>
+    <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+    <a href="#donate" onclick="closeMobileMenu()">Donate</a>
+  </div>
+  
+  <!-- Hero Section -->
+  <section id="home" class="section py-16 min-h-screen flex items-center">
+    <div class="container">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div class="hero-content text-center md:text-left animate-fade-in">
+          <span class="badge mb-4">Portfolio</span>
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">Jivitesh <span class="text-primary">Hazarika</span></h1>
+          <p class="text-lg text-muted mb-8">Welcome to my personal portfolio showcasing my work and interests.</p>
+          
+          <div class="flex flex-wrap gap-2 justify-center md:justify-start">
+            <a href="#about" class="btn btn-primary">About me</a>
+            <a href="#contact" class="btn btn-secondary">Contact</a>
+          </div>
+        </div>
+        
+        <div class="hero-image flex justify-center animate-fade-in delay-200">
+          <div class="profile-image">
+            <img src="profile.png?text=Jivitesh+Hazarika" alt="Jivitesh Hazarika" id="profileImage" onerror="this.src='profile.png?text=Jivitesh+Hazarika'">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- About Section -->
+  <section id="about" class="section py-16 bg-gray-50">
+    <div class="container">
+      <div class="text-center mb-12 animate-fade-in">
+        <span class="badge mb-3">About</span>
+        <h2 class="text-3xl font-bold mb-3">About Me</h2>
+        <p class="text-muted max-w-2xl mx-auto">Get to know more about who I am and what I do.</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div class="animate-fade-in-left delay-200">
+          <div class="bg-white rounded-xl shadow-md p-8">
+            <h3 class="text-xl font-semibold mb-4">Who am I?</h3>
+            <p class="text-muted mb-4">I'm Jivitesh Hazarika, a passionate creator with interests in design, technology, and visual arts.</p>
+            <p class="text-muted">I love creating anime edits and sharing them on my dedicated Instagram account. When I'm not creating, I'm exploring new technologies and design trends.</p>
+            
+            <div class="mt-8">
+              <h4 class="text-lg font-medium mb-3">My Interests</h4>
+              <div class="flex flex-wrap">
+                <span class="interest-tag">Design</span>
+                <span class="interest-tag">Technology</span>
+                <span class="interest-tag">Anime</span>
+                <span class="interest-tag">Photography</span>
+                <span class="interest-tag">Visual Arts</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+     
+          
+         <div class="glass-panel p-8 relative overflow-hidden">
+            <div style="position: relative; z-index: 1;">
+              <h3 class="text-xl font-semibold mb-3">Let's collaborate</h3>
+              <p class="text-muted">Interested in working together? I'm always open to new opportunities and collaborations.</p>
+              <a href="#contact" class="btn btn-primary mt-4">Get in touch</a>
+            </div>
+            <div style="position: absolute; bottom: -2.5rem; right: -2.5rem; width: 8rem; height: 8rem; background-color: rgba(26, 37, 61, 0.1); border-radius: 50%; filter: blur(2rem);"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Contact Section -->
+  <section id="contact" class="section py-16">
+    <div class="container">
+      <div class="text-center mb-12 animate-fade-in">
+        <span class="badge mb-3">Contact</span>
+        <h2 class="text-3xl font-bold mb-3">Get In Touch</h2>
+        <p class="text-muted max-w-2xl mx-auto">Feel free to reach out to me through any of the following channels.</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div class="animate-fade-in-left">
+          <div class="glass-panel p-8 relative overflow-hidden">
+            <div style="position: absolute; top: -4rem; left: -4rem; width: 8rem; height: 8rem; background-color: rgba(26, 37, 61, 0.05); border-radius: 50%; filter: blur(3rem);"></div>
+            <div style="position: absolute; bottom: -4rem; right: -4rem; width: 8rem; height: 8rem; background-color: rgba(26, 37, 61, 0.05); border-radius: 50%; filter: blur(3rem);"></div>
+            
+            <div style="position: relative; z-index: 1;">
+              <div style="width: 4rem; height: 4rem; display: flex; align-items: center; justify-content: center; background-color: rgba(26, 37, 61, 0.1); border-radius: 50%; margin-bottom: 1.5rem;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary">
+                  <rect width="20" height="16" x="2" y="4" rx="2"/>
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                </svg>
+              </div>
+              
+              <h3 class="text-2xl font-bold mb-4">Let's talk</h3>
+              <p class="text-muted mb-8">Whether you want to get in touch, discuss a project, or just say hi, I'd love to hear from you.</p>
+              
+              <a href="mailto:jiviteshhazarika2010@gmail.com" class="btn btn-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 0.5rem;">
+                  <rect width="20" height="16" x="2" y="4" rx="2"/>
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                </svg>
+                Send me an email
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="animate-fade-in-right delay-200">
+          <div class="mb-8">
+            <h3 class="text-xl font-semibold mb-4">Connect with me</h3>
+            
+            <div class="flex flex-wrap">
+              <a href="mailto:jiviteshhazarika2010@gmail.com" class="social-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="20" height="16" x="2" y="4" rx="2"/>
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                </svg>
+                jiviteshhazarika2010@gmail.com
+              </a>
+                
+             <a href="https://jivitesh.cc.cc/" target="_blank" rel="noopener noreferrer" class="social-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                  <polyline points="15 3 21 3 21 9"/>
+                  <line x1="10" x2="21" y1="14" y2="3"/>
+                </svg>
+                Phone call
+              </a>
+              
+              <a href="https://instagram.com/jivitesh.hazarika" target="_blank" rel="noopener noreferrer" class="social-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+                </svg>
+                @jivitesh.hazarika [PERSONAL]
+              </a>
+              
+              <a href="https://instagram.com/aninewsdaily" target="_blank" rel="noopener noreferrer" class="social-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+                </svg>
+                @aninewsdaily
+              </a>
+
+<a href="https://instagram.com/aniwatchtv.to" target="_blank" rel="noopener noreferrer" class="social-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+                </svg>
+                @aniwatchtv.to
+              </a>
+            </div>
+          </div>
+          
+          <div class="glass-panel p-6 rounded-xl">
+            <h4 class="text-lg font-medium mb-4">Location</h4>
+            <p class="text-muted mb-4">Silphukhuri , Navagraha Road , Assam , India [PIN code: 781003]</p>
+            <a href="https://www.google.com/maps/dir/26.1852021,91.7628572/Pubali+Path,+Chenikuthi,+Guwahati,+Assam+781003,+India/@26.1857043,91.7633926,18z/data=!4m6!4m5!1m0!1m2!1m1!1s0x375a598fea214521:0x66e09fef28af5f5f!3e0" target="_blank" rel="noopener noreferrer" class="inline-block px-10 py-4 border rounded-full hover:bg-gray-100 transition-all text-sm">
+              Google maps
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Donate Section -->
+  <section id="donate" class="section py-16 bg-gray-50">
+    <div class="container">
+      <div class="text-center mb-12 animate-fade-in">
+        <span class="badge mb-3">Support</span>
+        <h2 class="text-3xl font-bold mb-3">Donate</h2>
+        <p class="text-muted max-w-2xl mx-auto">If you appreciate my work, consider supporting me with a donation.</p>
+      </div>
+      
+      <div class="donation-panel animate-fade-in">
+        <h3 class="text-xl font-semibold mb-3 text-center">UPI Donation</h3>
+        <p class="text-center mb-4">Support my work with a quick UPI payment</p>
+        
+        <div class="qr-code" id="qrCode">
+          <!-- QR code will be generated by JavaScript -->
+        </div>
+        
+       
+        
+        
+        <p class="text-xs text-center mt-4 text-muted">Your support helps me create more content and improve my skills.</p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer class="py-8 px-6 text-center bg-white border-t">
+    <div class="container">
+      <p class="text-muted text-sm">© <span id="currentYear"></span> Jivitesh Hazarika. All rights reserved.</p>
+    </div>
+  </footer>
+  
+  <!-- Copy Success Modal -->
+  <div id="copyModal" class="modal">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeCopyModal()">&times;</button>
+      <div class="text-center">
+        <div style="font-size: 4rem; margin-bottom: 1rem;">✓</div>
+        <h3 class="text-xl font-bold mb-2">UPI ID Copied!</h3>
+        <p class="text-muted">You can now paste it in your UPI payment app.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // Set current year in footer
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+    
+    // Handle scroll effects on header
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 10) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+    
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    let menuOpen = false;
+    
+    function toggleMenu() {
+      menuOpen = !menuOpen;
+      if (menuOpen) {
+        mobileMenu.classList.add('open');
+        menuBtn.classList.add('open');
+        menuBtn.querySelector('span:nth-child(1)').style.transform = 'rotate(45deg) translate(5px, 5px)';
+        menuBtn.querySelector('span:nth-child(2)').style.opacity = '0';
+        menuBtn.querySelector('span:nth-child(3)').style.transform = 'rotate(-45deg) translate(5px, -5px)';
+        document.body.style.overflow = 'hidden';
+      } else {
+        mobileMenu.classList.remove('open');
+        menuBtn.classList.remove('open');
+        menuBtn.querySelector('span:nth-child(1)').style.transform = 'none';
+        menuBtn.querySelector('span:nth-child(2)').style.opacity = '1';
+        menuBtn.querySelector('span:nth-child(3)').style.transform = 'none';
+        document.body.style.overflow = '';
+      }
+    }
+    
+    function closeMobileMenu() {
+      menuOpen = false;
+      mobileMenu.classList.remove('open');
+      menuBtn.classList.remove('open');
+      menuBtn.querySelector('span:nth-child(1)').style.transform = 'none';
+      menuBtn.querySelector('span:nth-child(2)').style.opacity = '1';
+      menuBtn.querySelector('span:nth-child(3)').style.transform = 'none';
+      document.body.style.overflow = '';
+    }
+    
+    menuBtn.addEventListener('click', toggleMenu);
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+    
+    // Scroll animations
+    function checkAnimations() {
+      const elements = document.querySelectorAll('.animate-fade-in, .animate-fade-in-left, .animate-fade-in-right');
+      
+      elements.forEach(element => {
+        const rect = element.getBoundingClientRect();
+        const isVisible = rect.top < window.innerHeight * 0.8;
+        
+        if (isVisible) {
+          element.classList.add('visible');
+        }
+      });
+    }
+    
+    // Check animations on load and scroll
+    window.addEventListener('load', checkAnimations);
+    window.addEventListener('scroll', checkAnimations);
+    
+    // Initial setup for smooth scrolling
+    document.documentElement.style.scrollBehavior = 'auto';
+    window.scrollTo(0, 0);
+    setTimeout(() => {
+      document.documentElement.style.scrollBehavior = 'smooth';
+    }, 100);
+    
+    // Generate QR code for UPI
+    function generateQRCode() {
+      const upiId = "8474838991@fam";
+      const upiName = "Jivitesh Hazarika";
+      const qrCodeUrl = `upi.png?chs=200x200&cht=qr&chl=upi://pay?pa=${upiId}&pn=${encodeURIComponent(upiName)}&cu=INR`;
+      
+      const qrCodeImg = document.createElement('img');
+      qrCodeImg.src = qrCodeUrl;
+      qrCodeImg.alt = "UPI QR Code";
+      qrCodeImg.width = 200;
+      qrCodeImg.height = 200;
+      
+      const qrCodeElement = document.getElementById('qrCode');
+      qrCodeElement.innerHTML = '';
+      qrCodeElement.appendChild(qrCodeImg);
+      
+      // Set UPI app link
+      const upiAppLink = document.getElementById('upiAppLink');
+      upiAppLink.href = `upi://pay?pa=${upiId}&pn=${encodeURIComponent(upiName)}&cu=INR`;
+    }
+    
+    // Copy UPI ID
+    function copyUpiId() {
+      const upiId = document.getElementById('upiId').textContent;
+      navigator.clipboard.writeText(upiId).then(() => {
+        showCopyModal();
+      });
+    }
+    
+    // Copy success modal
+    function showCopyModal() {
+      const modal = document.getElementById('copyModal');
+      modal.classList.add('open');
+      
+      setTimeout(() => {
+        closeCopyModal();
+      }, 3000);
+    }
+    
+    function closeCopyModal() {
+      const modal = document.getElementById('copyModal');
+      modal.classList.remove('open');
+    }
+    
+    // Try to load profile image
+    function tryLoadProfileImage() {
+      const img = document.getElementById('profileImage');
+      img.onerror = () => {
+        img.src = 'profile.png?text=Jivitesh+Hazarika';
+      };
+      img.src = 'profile.png';
+    }
+    
+    // Initialize all functions when DOM is loaded
+    document.addEventListener('DOMContentLoaded', function() {
+      generateQRCode();
+      tryLoadProfileImage();
+      checkAnimations();
+    });
+  </script>
+</body>
+</html>
